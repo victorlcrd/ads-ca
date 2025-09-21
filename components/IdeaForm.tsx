@@ -34,11 +34,14 @@ export function IdeaForm() {
       setMessage(data.message);
       setTitle('');
       setDescription('');
-    } catch (error: any) {
-      // Mostra a mensagem de erro
-      setStatus('error');
-      setMessage(error.message);
-    }
+    } catch (error) {
+  setStatus('error');
+  if (error instanceof Error) {
+    setMessage(error.message);
+  } else {
+    setMessage('Ocorreu um erro desconhecido.');
+  }
+}
   };
 
   return (
