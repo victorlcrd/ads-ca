@@ -1,9 +1,14 @@
 // app/api/ideas/route.ts
 
-import { sql } from '@vercel/postgres';
+import { createPool } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
+  // CORREÇÃO APLICADA AQUI:
+  const pool = createPool({
+    connectionString: process.env.adss_POSTGRES_URL, // Usando o nome correto que você passou
+  });
+
   try {
     const { title, description } = await request.json();
 
@@ -14,7 +19,8 @@ export async function POST(request: Request) {
       );
     }
 
-    await sql`
+    // Usamos pool.sql para executar o comando
+    await pool.sql`
       INSERT INTO ideas (title, description)
       VALUES (${title}, ${description});
     `;
@@ -25,7 +31,6 @@ export async function POST(request: Request) {
     );
 
   } catch (error) {
-    // Este é o bloco catch correto para o back-end
     console.error('Falha ao inserir ideia no banco:', error);
     return NextResponse.json(
       { error: 'Erro interno do servidor.' },
