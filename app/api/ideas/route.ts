@@ -3,9 +3,6 @@
 import { sql } from '@vercel/postgres';
 import { NextResponse } from 'next/server';
 
-// Configuração para otimizar a conexão com o banco na Vercel
-export const runtime = 'edge';
-
 // Função que lida com requisições POST para /api/ideas
 export async function POST(request: Request) {
   try {
