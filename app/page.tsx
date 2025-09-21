@@ -1,10 +1,11 @@
-// src/app/page.tsx
+// app/page.tsx
 
-import { SocialMediaSection } from '../components/SocialMediaSection';
+import { IdeaForm } from '@/components/IdeaForm';
+import { SocialMediaSection } from '@/components/SocialMediaSection';
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-zinc-50">
+    <main className="flex min-h-screen flex-col items-center p-8 md:p-24 bg-zinc-50">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
           Plataforma Digital
@@ -15,6 +16,9 @@ export default function HomePage() {
       </div>
 
       <SocialMediaSection />
+
+      <IdeaForm />
+
     </main>
   );
 }
