@@ -7,7 +7,7 @@ import { Navbar } from '@/components/Navbar';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Plataforma CA-ADS',
+  title: 'CALA',
   description: 'Hub digital do Centro Acadêmico de ADS do IFSC',
 };
 

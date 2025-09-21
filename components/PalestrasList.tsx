@@ -14,7 +14,7 @@ interface Props {
 
 export function PalestrasList({ palestras }: Props) {
   return (
-    <section className="w-full max-w-4xl p-8 mb-10 bg-white rounded-lg shadow-lg">
+    <section className="w-full max-w-4xl p-8 mb-10 bg-gray rounded-lg shadow-lg">
       <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
         Programação da Semana Acadêmica
       </h2>
@@ -22,7 +22,7 @@ export function PalestrasList({ palestras }: Props) {
         {palestras && palestras.length > 0 ? (
           palestras.map((palestra) => (
             <div key={palestra._id} className="p-4 border rounded-md shadow-sm">
-              <h3 className="text-xl font-semibold text-blue-700">{palestra.titulo}</h3>
+              <h3 className="text-xl font-semibold text-orange-500">{palestra.titulo}</h3>
               <p className="text-md text-gray-600">
                 <strong>Palestrante:</strong> {palestra.palestrante}
               </p>

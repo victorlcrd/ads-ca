@@ -79,7 +79,7 @@ export function IdeaForm() {
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:bg-gray-400"
+            className="bg-gray-900 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:bg-gray-400"
           >
             {status === 'loading' ? 'Enviando...' : 'Enviar Ideia'}
           </button>
