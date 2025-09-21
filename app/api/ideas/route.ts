@@ -1,6 +1,7 @@
+// app/api/ideas/route.ts
 
-import { NextResponse } from 'next/server';
 import { sql } from '@vercel/postgres';
+import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
   try {
@@ -24,11 +25,11 @@ export async function POST(request: Request) {
     );
 
   } catch (error) {
-    setStatus('error');
-    if (error instanceof Error) {
-      setMessage(error.message);
-    } else {
-      setMessage('Ocorreu um erro desconhecido.');
-    }
+    // Este é o bloco catch correto para o back-end
+    console.error('Falha ao inserir ideia no banco:', error);
+    return NextResponse.json(
+      { error: 'Erro interno do servidor.' },
+      { status: 500 }
+    );
   }
 }
